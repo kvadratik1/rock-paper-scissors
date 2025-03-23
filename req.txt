@@ -1,0 +1,5 @@
+program should take user input
+program should create random computer choice 
+5 rouds
+score after every 5 rouds
+who won
