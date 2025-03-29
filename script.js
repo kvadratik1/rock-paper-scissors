@@ -8,7 +8,22 @@ function playRound(){
     if (computerChoice === "scissors" && humanChoice === "rock") {
         humanScore += 1
         console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
-    } 
+    } else if (computerChoice === "rock" && humanChoice === "scissors") {
+        computerScore += 1
+        console.log("computer wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+    } else if (computerChoice === "paper" && humanChoice === "scissors") {
+        humanScore += 1
+        console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+    } else if (computerChoice === "paper" && humanChoice === "rock") {
+        computerScore += 1
+        console.log("computer wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+    } else if (computerChoice === "scissors" && humanChoice === "paper") {
+        computerScore += 1
+        console.log("computer wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+    } else if  (computerChoice === "rock" && humanChoice === "paper") {
+        humanScore += 1
+        console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+    }
 }
 playRound()
 
