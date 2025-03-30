@@ -24,7 +24,7 @@ function playRound(){
         humanScore += 1
         console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
     } else if (computerChoice == humanChoice) {
-        console.log("draw")
+        console.log("draw", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
     }
 }
 playRound()
