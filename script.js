@@ -23,9 +23,21 @@ function playRound(){
     } else if  (computerChoice === "rock" && humanChoice === "paper") {
         humanScore += 1
         console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+    } else if (computerChoice == humanChoice) {
+        console.log("draw")
     }
 }
 playRound()
+
+while (humanScore < 5 && computerScore < 5) {
+    playRound();
+}
+
+if (humanScore === 5) {
+    console.log("human won")
+} else if (computerScore === 5) {
+    console.log("computer won")
+}
 
 function getComputerChoice(){
     const randomNumber = getRandomInt(3)
