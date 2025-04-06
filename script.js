@@ -1,5 +1,8 @@
 let humanScore = 0
 let computerScore = 0
+const btnRock = document.querySelector("#btn-rock")
+const btnPaper = document.querySelector("#btn-paper")
+const btnScissors = document.querySelector("#btn-scissors")
 
 function playRound(){
     const computerChoice = getComputerChoice()
@@ -29,9 +32,7 @@ function playRound(){
 }
 playRound()
 
-while (humanScore < 5 && computerScore < 5) {
-    playRound();
-}
+
 
 if (humanScore === 5) {
     console.log("human won")
