@@ -61,7 +61,13 @@ function getRandomInt(max) {
 }
 
 function getHumanChoice(){
-    const message = "choose rock, paper,scissors"
-    let choice = prompt(message)
-    return choice
+  //  const message = "choose rock, paper,scissors"
+  // let choice = prompt(message)
+  //  return choice
 }
+
+
+const scissorsButton = document.querySelector("#btn-scissors")
+scissorsButton.addEventListener("click", (e) => {
+    console.log(e.target);
+})
