@@ -5,40 +5,53 @@ const btnRock = document.querySelector("#btn-rock")
 const btnPaper = document.querySelector("#btn-paper")
 const btnScissors = document.querySelector("#btn-scissors")
 
+const humanScoreEl = document.querySelector("#human-score")
+const computerScoreEl = document.querySelector("#computer-score")
+
 function playRound(humanChoice){
     const computerChoice = getComputerChoice()
 
     if (computerChoice === "scissors" && humanChoice === "rock") {
         humanScore += 1
-        console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+        humanScoreEl.innerText =`Human score ${humanScore}`
     } else if (computerChoice === "rock" && humanChoice === "scissors") {
         computerScore += 1
-        console.log("computer wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+        computerScoreEl.innerText =`Computer score ${computerScore}`
     } else if (computerChoice === "paper" && humanChoice === "scissors") {
         humanScore += 1
-        console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+        humanScoreEl.innerText =`Human score ${humanScore}`
     } else if (computerChoice === "paper" && humanChoice === "rock") {
         computerScore += 1
-        console.log("computer wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+        computerScoreEl.innerText =`Computer score ${computerScore}`
     } else if (computerChoice === "scissors" && humanChoice === "paper") {
         computerScore += 1
-        console.log("computer wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+         computerScoreEl.innerText =`Computer score ${computerScore}`
     } else if  (computerChoice === "rock" && humanChoice === "paper") {
         humanScore += 1
-        console.log("human wins", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
+        humanScoreEl.innerText =`Human score ${humanScore}`
     } else if (computerChoice == humanChoice) {
         console.log("draw", `Human score: ${ humanScore}`, `Computer score ${ computerScore}`)
     }
+
+    if (humanScore === 5) {
+        humanScore = 0
+        computerScore = 0
+        humanScoreEl.innerText =`Human score ${humanScore}`
+        computerScoreEl.innerText =`Computer score ${computerScore}`
+        winner.innerText =`Human won`
+    } else if (computerScore === 5) {
+        humanScore = 0
+        computerScore = 0
+        humanScoreEl.innerText =`Human score ${humanScore}`
+        computerScoreEl.innerText =`Computer score ${computerScore}`
+        winner.innerText =`Computer won`
+      }
 }
 playRound()
 
 
 
-if (humanScore === 5) {
-    console.log("human won")
-} else if (computerScore === 5) {
-    console.log("computer won")
-}
+
 
 function getComputerChoice(){
     const randomNumber = getRandomInt(3)
@@ -82,3 +95,10 @@ rockButton.addEventListener("click", (e) => {
     console.log(e.target);
     getHumanChoice("rock");
 })
+
+const winner = document.querySelector(".winner")
+
+
+//function updateScore(){
+
+//}
