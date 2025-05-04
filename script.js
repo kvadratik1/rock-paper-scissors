@@ -1,12 +1,12 @@
 let humanScore = 0
 let computerScore = 0
+
 const btnRock = document.querySelector("#btn-rock")
 const btnPaper = document.querySelector("#btn-paper")
 const btnScissors = document.querySelector("#btn-scissors")
 
-function playRound(){
+function playRound(humanChoice){
     const computerChoice = getComputerChoice()
-    const humanChoice = getHumanChoice()
 
     if (computerChoice === "scissors" && humanChoice === "rock") {
         humanScore += 1
@@ -60,14 +60,25 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-function getHumanChoice(){
-  //  const message = "choose rock, paper,scissors"
-  // let choice = prompt(message)
-  //  return choice
-}
+function getHumanChoice(choice) {
+    playRound(choice);
+  }
 
 
 const scissorsButton = document.querySelector("#btn-scissors")
 scissorsButton.addEventListener("click", (e) => {
     console.log(e.target);
+    getHumanChoice("scissors");
+})
+
+const paperButton = document.querySelector("#btn-paper")
+paperButton.addEventListener("click", (e) => {
+    console.log(e.target);
+    getHumanChoice("paper");
+})
+
+const rockButton = document.querySelector("#btn-rock")
+rockButton.addEventListener("click", (e) => {
+    console.log(e.target);
+    getHumanChoice("rock");
 })
